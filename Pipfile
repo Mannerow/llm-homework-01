@@ -5,16 +5,17 @@ name = "pypi"
 
 [packages]
 requests = "*"
-elasticsearch = "*"
-tiktoken = "*"
-jupyter = "*"
-ipykernel = "*"
 tqdm = "*"
 notebook = "==7.1.2"
 openai = "*"
+elasticsearch = "*"
+pandas = "*"
+scikit-learn = "*"
+ipywidgets = "*"
+numpy = "*"
+ipykernel = "*"
 
 [dev-packages]
 
 [requires]
 python_version = "3.9"
-python_full_version = "3.9.12"
