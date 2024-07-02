@@ -1,8 +1,14 @@
 # llm-homework-01
-DataTalks: LLM Zoomcamp - Homework for Module 1
 
-Run Elastic Search: 
+## 📝 Description
 
+The repository facilitates the retrieval and search of course-related FAQ documents, using them to construct detailed prompts for OpenAI's model. It starts by using the `requests` library to download JSON-formatted documents from GitHub, then enriches and indexes these documents in Elasticsearch with the `elasticsearch` Python library for advanced querying capabilities. The data is processed and indexed to allow for efficient searches tailored to specific questions and contexts. Once relevant FAQs are retrieved, the repository uses these details to build structured prompts, which are then submitted to OpenAI’s model to generate comprehensive and contextually relevant answers. This integration provides a streamlined approach to generating precise responses based on the FAQs, leveraging both Elasticsearch's powerful search capabilities and OpenAI's advanced language model.
+
+## 🔧 Instructions to Run
+
+In a seperate terminal, run elasticsearch with docker: 
+
+```bash
 docker run -it \
     --rm \
     --name elasticsearch \
@@ -11,28 +17,34 @@ docker run -it \
     -e "discovery.type=single-node" \
     -e "xpack.security.enabled=false" \
     docker.elastic.co/elasticsearch/elasticsearch:8.4.3
+```
 
-Q1
+Install pipenv and activate the shell:
 
-Version.build_hash = 42f05b9372a9a4a470db3b52817899b99a76ee73
+```bash
+# Install pipenv
+pip install pipenv
 
-Q2
+# Create a new pipenv environment or activate an existing one
+pipenv shell
+```
 
-index function
+Create a new file named .envrc
 
-Q3
+```bash
+touch .envrc
+```
 
-max_score = 84.05
+Add your OPENAI_API_KEY to the file: 
 
-Q4
+```bash
+export OPENAI_API_KEY="<your-openai-api-key>"
+```
 
-3rd question = How do I copy files from a different folder into docker container’s working directory?
+To ensure that your environment variable is recognized, you need to either source the .envrc file manually or use a tool like direnv to load it automatically:
 
-Q5
+```bash
+direnv allow
+```
 
-1462
-
-Q6
-
-
-
+Run the jupyter notebook file: 'search.ipynb'
